@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/juape/Desktop/cpp_reflection/.cmakepls_cache",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe -IC:/Users/juape/Desktop/cpp_reflection/include -std=gnu++20 -o CMakeFiles\\examples.dir\\examples\\example.cpp.obj -c C:\\Users\\juape\\Desktop\\cpp_reflection\\examples\\example.cpp",
+  "file": "C:\\Users\\juape\\Desktop\\cpp_reflection\\examples\\example.cpp",
+  "output": "CMakeFiles\\examples.dir\\examples\\example.cpp.obj"
+}
+]
