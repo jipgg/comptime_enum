@@ -68,8 +68,8 @@ consteval Enum_info enum_info() {
     enum_t = enum_t.substr(0, enum_t.find_first_of(','));
     const std::string preceding = enum_t_keyw + std::string(enum_t) + ",";
     std::string_view enum_v = raw.substr(raw.find(preceding) + preceding.size());
-    if (is_enum_class) {
-        enum_v = enum_v.substr(enum_v.find("::") + 2);
+    if (enum_v.find("::")) {
+        enum_v = enum_v.substr(enum_v.find_last_of("::") + 1);
     }
     enum_v = enum_v.substr(0, enum_v.find_first_of(">"));
     return {
@@ -87,11 +87,10 @@ consteval Enum_info enum_info() {
     const sv enum_find{"Type = "}; 
     const sv value_find{"value = "};
     sv enum_t = raw.substr(raw.find(enum_find) + enum_find.size());
-    bool is_enum_class = enum_t.find("::") != std::string::npos;
     enum_t = enum_t.substr(0, enum_t.find(";"));
     sv enum_v = raw.substr(raw.find(value_find) + value_find.size());
-    if (is_enum_class) {
-        enum_v = enum_v.substr(enum_v.find("::") + 2);
+    if (enum_v.find("::")) {
+        enum_v = enum_v.substr(enum_v.find_last_of("::") + 1);
     }
     enum_v = enum_v.substr(0, enum_v.find("]"));
     return {
